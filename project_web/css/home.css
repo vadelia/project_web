@@ -1,0 +1,275 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #FFF0D1;
+}
+
+header {
+    background-color: #7e572bcc;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between; /* Memisahkan logo dan navigasi */
+    align-items: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    color: #654520;
+}
+
+.logo img {
+    max-width: 80px; /* Sesuaikan ukuran logo */
+    height: auto;
+    border-radius: 40px;
+}
+
+.header-nav {
+    display: flex; /* Atur elemen dalam nav secara horizontal */
+    gap: 20px; /* Jarak antar elemen */
+    justify-content: center;
+}
+
+.header-nav a {
+    text-decoration: none; /* Menghapus garis bawah */
+    color: #ffffff; /* Warna teks putih */
+    font-size: 16px; /* Ukuran font */
+    transition: color 0.3s ease;
+}
+
+.header-nav a:hover {
+    text-decoration: underline;
+    color: #654520; /* Ubah warna saat hover */
+}
+
+.auth-nav {
+    display: flex; /* Atur elemen dalam nav secara horizontal */
+    gap: 10px; /* Jarak antar tombol */
+    margin-left: auto; /* Menjauhkan auth-nav dari logo */
+    position: absolute; /* Mengatur posisi auth-nav */
+    right: 30px; /* Jarak dari kanan */
+    top: 10px; /* Jarak dari atas header */
+    color: #654520;
+}
+
+.auth-nav a {
+    text-decoration: none;
+    color: #fafafa; /* Ubah warna teks menjadi putih */
+    font-size: 16px;
+    padding: 10px 20px;
+    border: 1px solid #ffffff; /* Border putih agar kontras */
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+
+}
+
+.auth-nav a:hover {
+    background-color: #654520;
+    color: white;
+}
+
+.main-content {
+    display: flex;
+    justify-content: center; /* Pusatkan konten di layar */
+    gap: 20px; /* Tambahkan spasi antar gambar */
+    padding: 50px;
+    flex-wrap: wrap; /* Membuat layout responsif */
+}
+
+.left-section img, .right-section img {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 20,3);
+    max-width: 400px; /* Maksimum lebar gambar */
+    width: 100%; /* Agar gambar selalu mengikuti ukuran kontainer */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6);
+}
+
+.left-section, .right-section {
+    flex: 1 1 400px; /* Buat kolom gambar minimal 400px */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 20,3);
+}
+
+#menu {
+    padding: 20px 0; /* Padding atas dan bawah */
+    overflow-x: auto; /* Mengizinkan scroll horizontal */
+    white-space: nowrap; /* Mencegah pembungkusan gambar */
+    background-color: #654520cc;
+    text-align: center;
+    color: #FFF0D1;
+    text-spacing-trim: 20px;
+    line-height: 1.5; 
+}
+
+.container1 {
+    display: flex; /* Gunakan flex untuk menampilkan item dalam satu baris */
+    justify-content: flex-start; /* Pusatkan konten di dalam kontainer */
+    align-items: center; /* Pusatkan item menu secara vertikal */
+}
+
+.slide {
+    display: flex; /* Kontainer untuk slide */
+    transition: transform 0.5s ease; /* Animasi saat slide */
+}
+
+.menu-item {
+    display: flex; /* Ubah ini dari inline-block ke flex */
+    flex-direction: column; /* Mengatur gambar dan teks secara vertikal */
+    align-items: center; /* Pusatkan konten di dalam menu item */
+    margin: 100px; /* Margin antar item */
+    max-width: 100px; /* Atur lebar item menu */
+    max-height: auto; 
+    border-radius: 10px; /* Sudut membulat */
+    padding: 5px; /* Padding di dalam item */
+    position: relative; /* Agar teks berada di atas gambar */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Tambahkan transisi halus */
+    margin: 50px, 100px;
+}
+
+.menu-item img {
+    width: 200px; /* Tetapkan lebar yang konsisten */
+    height: 300px; /* Tetapkan tinggi yang konsisten */
+    border-radius: 8px; 
+    object-fit: cover; /* Memastikan gambar tetap dalam proporsi dan mengisi kontainer */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Tambahkan transisi untuk gambar */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6);
+    margin: 10px, 20px;
+}
+
+.menu-item:hover {
+    transform: perspective(1000px) rotateX(10deg) rotateY(10deg); /* Efek rotasi 3D */
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2); /* Efek bayangan untuk ilusi kedalaman */
+}
+
+.menu-item:hover img {
+    transform: scale(1.1); /* Perbesar gambar sedikit saat di-hover untuk efek lebih dramatis */
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2); /* Tambahkan bayangan pada gambar */
+}
+
+.menu-item a {
+    margin-top: 8px;
+    text-align: center;
+    color: #654520;
+    visibility: hidden; /* Sembunyikan teks secara default */
+    opacity: 0; /* Set opacity menjadi 0 untuk efek halus */
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* Tambahkan transisi untuk efek halus */
+    position: absolute; /* Teks akan berada di atas gambar */
+    bottom: 10px; /* Posisikan teks di bawah gambar */
+    left: 50%; /* Posisikan teks di tengah secara horizontal */
+    transform: translateX(-50%); /* Agar benar-benar berada di tengah */
+    background-color: rgba(255, 255, 255, 0.7); /* Warna latar belakang semi-transparan */
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.menu-item:hover a {
+    visibility: visible; /* Tampilkan teks saat hover */
+    opacity: 1; /* Perubahan opacity untuk membuat teks memudar */
+}
+
+/* Container utama untuk gambar dan deskripsi */
+#menu2 {
+    display: flex; /* Menggunakan Flexbox untuk membuat layout horizontal */
+    align-items: center; /* Menjaga elemen tetap sejajar secara vertikal */
+    justify-content: space-between; /* Memberi jarak antara deskripsi dan gambar */
+    max-width: 1200px; /* Lebar maksimal kontainer */
+    margin: 0 auto; /* Pusatkan konten di tengah halaman */
+    padding: 20px;
+    border-radius: 8px; /* Sudut membulat pada kontainer */
+}
+
+/* Styling untuk deskripsi */
+.description {
+    flex: 1; /* Deskripsi menempati ruang yang lebih besar */
+    padding-right: 20px; /* Tambahkan spasi di kanan */
+}
+
+.description h2 {
+    color: #654520; /* Warna judul */
+    margin-bottom: 10px; /* Jarak bawah untuk judul */
+}
+
+.description p {
+    line-height: 1.6; /* Tambahkan jarak antar baris untuk keterbacaan */
+    color: #654520; /* Warna teks */
+}
+
+/* Styling untuk gambar */
+.image-container {
+    flex: 0 0 400px; /* Gambar memiliki lebar tetap 400px */
+}
+
+.image-container img {
+    max-width: 100%; /* Pastikan gambar tidak melebihi kontainernya */
+    height: 400%;
+    border-radius: 8px; /* Sudut membulat pada gambar */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Bayangan gambar */
+}
+
+/* Responsif untuk layar yang lebih kecil */
+@media (max-width: 768px) {
+    .content-container {
+        flex-direction: column; /* Pada layar kecil, ubah layout menjadi vertikal */
+        text-align: center;
+    }
+
+    .description {
+        padding-right: 0;
+        margin-bottom: 20px; /* Beri jarak antara deskripsi dan gambar */
+    }
+
+    .image-container {
+        flex: 0 0 auto; /* Buat gambar menyesuaikan ukuran alami */
+    }
+}
+
+footer {
+    background-color: #654520;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.footer-info {
+    margin: 10px;
+}
+
+.footer-info h3 {
+    margin-bottom: 10px;
+}
+
+.footer-info p {
+    margin: 5px 0;
+}
+
+
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column; /* Pada layar kecil, gambar akan ditumpuk secara vertikal */
+        padding: 20px;
+    }
+
+    header {
+        flex-direction: column; /* Header akan bertumpuk vertikal pada layar kecil */
+        text-align: center;
+    }
+
+    .logo img {
+        max-width: 100px; /* Sesuaikan ukuran logo pada layar kecil */
+    }
+
+    .header-nav {
+        flex-direction: column; /* Tampilkan item nav secara vertikal */
+        margin-top: 10px; /* Tambahkan margin atas */
+    }
+}
