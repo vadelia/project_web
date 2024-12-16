@@ -2,8 +2,8 @@
 // Konfigurasi database
 $host = 'localhost';
 $dbname = 'uas_web'; // Nama database Anda
-$user = 'root';        // Username database Anda
-$pass = '';            // Password database Anda
+$user = 'root';      // Username database Anda
+$pass = '';          // Password database Anda
 
 // Koneksi ke database
 $conn = new mysqli($host, $user, $pass, $dbname);
@@ -18,7 +18,7 @@ $username = isset($_POST['username']) ? trim($_POST['username']) : '';
 $password = isset($_POST['password']) ? trim($_POST['password']) : '';
 
 // Validasi input kosong
-if (empty($username) || empty($password)) { 
+if (empty($username) || empty($password)) {
     header("Location: login_page.html?error=Username atau password tidak boleh kosong");
     exit();
 }
@@ -33,13 +33,15 @@ $result = $stmt->get_result();
 // Validasi login
 if ($result->num_rows > 0) {
     $user = $result->fetch_assoc();
-    
+
     // Periksa password tanpa hash
-    if ($password === $user['password']) { 
+    if ($password === $user['password']) {
         // Login berhasil
         session_start(); // Mulai sesi untuk menjaga login
-        $_SESSION['username'] = $user['username']; // Simpan data sesi pengguna
-        header("Location: ../dashboard.html");
+        $_SESSION['username'] = $user['username']; // Simpan username
+        $_SESSION['role'] = $user['role'];         // Simpan role pengguna
+        $_SESSION['full_name'] = $user['full_name']; // Simpan full name pengguna
+        header("Location: ../dashboard.html"); // Redirect ke dashboard
         exit();
     } else {
         // Password salah

@@ -8,7 +8,8 @@
 </head>
 <body>
     <header>
-        <a href="home_page.html" class="logout-button">Keluar</a> <!-- Tambahkan tombol Keluar -->
+        <!-- Tombol Logout -->
+        <a href="php/logout.php" class="logout-button">Keluar</a>
         <h1>Manajemen Pegawai RR Beauty</h1>
     </header>
     
@@ -16,8 +17,9 @@
         <div class="profile-section">
             <div class="profile-info">
                 <img src="source/profil2.jpg" alt="Profile" class="profile-pic">
-                <h2>Anna Williams</h2>
-                <p>Administrator</p>
+                <!-- Menampilkan nama pengguna dan role -->
+                <h2><?php echo htmlspecialchars($full_name); ?></h2>
+                <p><?php echo htmlspecialchars($role); ?></p>
             </div>
             <div class="stats">
                 <div class="stat-card">
@@ -36,7 +38,7 @@
         </div>
 
         <div class="main-section">
-            <h1>Hallo! Anna Williams</h1>
+            <h1>Hallo! <?php echo htmlspecialchars($full_name); ?></h1>
             <p>Selalu Harimu Menyenangkan.</p>
             <div class="cards">
                 <div class="card">

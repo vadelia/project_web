@@ -1,0 +1,131 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #FFF0D1;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+header {
+    background-color: #654520;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    position: relative; /* Tambahkan untuk mengatur posisi tombol "Keluar" */
+}
+
+header h1 {
+    margin: 0;
+    position: relative; /* Untuk memastikan judul tetap pada posisi */
+}
+
+.logout-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #ffffff;
+    color: #654520;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    z-index: 10; /* Pastikan tombol ada di atas elemen lain */
+    pointer-events: auto; /* Memastikan tombol bisa diklik */
+}
+
+.logout-button:hover {
+    background-color:#fc6855;
+    color: white; /* Ubah warna teks agar kontras saat hover */
+}
+
+
+.dashboard-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 30px;
+}
+
+.profile-section {
+    width: 30%;
+    height: 59%;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-info {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 20%;
+    margin-bottom: 10px;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+}
+
+.stat-card {
+    background-color: #654520;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.main-section {
+    width: 60%;
+    margin-bottom: none; /* Memberi jarak antara main section dan produk section */
+}
+
+.main-section h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.cards {
+    display: flex;
+    gap: 20px;
+}
+
+.card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 30%;
+}
+
+.card h3 {
+    margin-top: 0;
+}
+
+.card p {
+    margin-bottom: 10px;
+}
+
+.button {
+    background-color: #4e73df;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #654520;
+    color: #ffffff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
